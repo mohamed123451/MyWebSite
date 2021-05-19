@@ -91,3 +91,9 @@ image.addEventListener('load', function(){
     animate();
 
 });
+
+
+
+
+
+
