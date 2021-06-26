@@ -4,11 +4,10 @@ image.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIoAAACJCAYAAADzE6DKA
 image.addEventListener('load', function(){
     const canvas = document.getElementById('canvas1');
     const ctx = canvas.getContext('2d');
-    canvas.width = 500;
-    canvas.height = 200;
+    canvas.width = 276;
+    canvas.height = 244;
 
-    ctx.drawImage(image, 0, 20, canvas.width/2, canvas.height-20);
-    //ctx.drawImage(image2, canvas.width/2, 0, canvas.width/2, canvas.height);
+    ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
     const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
@@ -33,7 +32,7 @@ image.addEventListener('load', function(){
 
     function calculateBrightness(red, green, blue){
         return Math.sqrt(
-            (red * red) * 0.599 +
+            (red * red) * 0.299 +
             (green * green) * 0.587 +
             (blue * blue) * 0.114
         )/100;
@@ -44,7 +43,7 @@ image.addEventListener('load', function(){
             this.x = Math.random() * canvas.width;
             this.y = 0;
             this.speed = 0;
-            this.velocity = Math.random() * 1.5;
+            this.velocity = Math.random() * 0.5;
             this.size = Math.random() * 0.5 + 0.5;
             this.position1 = Math.floor(this.y);
             this.position2 = Math.floor(this.x);
@@ -53,11 +52,11 @@ image.addEventListener('load', function(){
             this.position1 = Math.floor(this.y);
             this.position2 = Math.floor(this.x);
             this.speed = mappedImage[this.position1][this.position2][0];
-            let movement = ((2.5 - this.speed) + this.velocity)*0.3;
+            let movement = ((2.5 - this.speed) + this.velocity)*2.5;
 
             this.y += movement;
             if (this.y >= canvas.height){
-                this.y = 0;
+                this.y =  Math.random()* canvas.height;
                 this.x = Math.random() * canvas.width;
             }
         }
@@ -68,20 +67,24 @@ image.addEventListener('load', function(){
             ctx.fill();
         }
     }
+
+
     function init(){
         for (let i = 0; i < numberOfParticles; i++){
             particlesArray.push(new Particle());
         }
     }
     init();
+
+
     function animate () {
-        ctx.globalAlpha = 0.05;
+        ctx.globalAlpha = 0.29;
         ctx.fillStyle = 'rgb(0, 0, 0)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.globalAlpha = 0.2;
         for (let i = 0; i < particlesArray.length; i++) {
             particlesArray[i].update();
-            ctx.globalAlpha = particlesArray[i].speed;
+            ctx.globalAlpha = particlesArray[i].speed*0.3;
             particlesArray[i].draw();
         }
         requestAnimationFrame( animate );

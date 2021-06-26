@@ -8,13 +8,13 @@ body {
   background: black;
 }
 canvas {
-    border: 2px solid white;
+  
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: -1;
-    width: 490px; 
-    height: 160px;
+    width: 276px; 
+    height: 274px;
     transform: translate(-50%, -50%);
 }
 
