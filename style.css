@@ -35,5 +35,19 @@ footer a {
   color: orangered;
 }
 
+.projectsDIV {
+  color: azure;
+}
+
+.projectsDIV ul.LF{
+  list-style-image: url('pics/LF.jpg');
+}
+.projectsDIV ul.Grip{
+  list-style-image: url('pics/g.jpg');
+}
+.projectsDIV ul.TFT{
+  list-style-image: url('pics/tft.jpg');
+}
+
 
 
