@@ -35,19 +35,37 @@ footer a {
   color: orangered;
 }
 
+
+/***** PROGECTS PAGE *****/
 .projectsDIV {
   color: azure;
 }
 
-.projectsDIV ul.LF{
+
+.projectsDIV li.LF{
   list-style-image: url('pics/LF.jpg');
 }
-.projectsDIV ul.Grip{
+.projectsDIV li.Grip{
   list-style-image: url('pics/g.jpg');
 }
-.projectsDIV ul.TFT{
+.projectsDIV li.TFT{
   list-style-image: url('pics/tft.jpg');
+}
+.projectsDIV ul.TFTtypes{
+  list-style-image: none;
+  list-style-type: square;
 }
 
 
+/***** CONTACTS PAGE *****/
+.contactDIV {
+  color: azure;
+}
 
+.contactDIV ul{
+  line-height:280%;
+}
+.contactDIV a{
+  color: blue;
+  text-decoration: underline;
+}
