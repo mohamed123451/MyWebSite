@@ -69,3 +69,12 @@ footer a {
   color: blue;
   text-decoration: underline;
 }
+
+
+/***** ABOUT PAGE *****/
+.aboutDIV{
+  color: azure;
+  margin: 10px;
+  margin-top: 20px;
+  font-size: x-large;
+}
