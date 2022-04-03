@@ -86,6 +86,7 @@ footer a {
   position: absolute;
   top: 28%;
   left: 85%;
+  z-index: 1;
 }
 
 .moon{
